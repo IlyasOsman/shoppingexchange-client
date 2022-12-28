@@ -26,7 +26,7 @@ import product_06_image_03 from "../images/facemask_3.jpg";
 const products = [
   {
     id: "01",
-    title: "Short Sleeve T-shirt",
+    title: "Short T-shirt",
     price: 350,
     image01: product_01_image_01,
     image02: product_01_image_02,
@@ -50,7 +50,7 @@ const products = [
 
   {
     id: "03",
-    title: "POHB Power Banks",
+    title: "Power Banks",
     price: 2500,
     image01: product_03_image_01,
     image02: product_03_image_02,
@@ -74,7 +74,7 @@ const products = [
 
   {
     id: "05",
-    title: "Fashion Mens Long Sleeve Shirts",
+    title: "Mens Shirts",
     price: 999,
     image01: product_05_image_01,
     image02: product_05_image_02,
