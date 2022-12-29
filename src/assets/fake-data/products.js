@@ -40,13 +40,15 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "350",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
 
@@ -68,13 +70,15 @@ const products = [
         name: "Amazon",
         price: "43500",
         fee: "1200",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "45000",
         fee: "1000",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -95,13 +99,15 @@ const products = [
         name: "Amazon",
         price: "2700",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "2500",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -122,13 +128,15 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "110",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -149,13 +157,15 @@ const products = [
         name: "Amazon",
         price: "899",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "999",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -175,13 +185,15 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "350",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -202,13 +214,15 @@ const products = [
         name: "Amazon",
         price: "125",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "110",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -229,13 +243,15 @@ const products = [
         name: "Amazon",
         price: "2500",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "3500",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -256,13 +272,15 @@ const products = [
         name: "Amazon",
         price: "13250",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "13000",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -283,13 +301,15 @@ const products = [
         name: "Amazon",
         price: "25",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "50",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -316,7 +336,8 @@ const products = [
         name: "Jumia",
         price: "35",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -337,13 +358,15 @@ const products = [
         name: "Amazon",
         price: "35",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "30",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -364,13 +387,15 @@ const products = [
         name: "Amazon",
         price: "32",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "30",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
