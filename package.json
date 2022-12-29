@@ -1,5 +1,5 @@
 {
-  "name": "market-aggregator-client",
+  "name": "product-comparator-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
