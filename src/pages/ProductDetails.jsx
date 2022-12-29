@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Table } from "reactstrap"
 
 import products from "../assets/fake-data/products";
 import { useParams } from "react-router-dom";
@@ -15,9 +16,9 @@ import ProductCard from "../components/UI/product-card/ProductCard";
 
 const FoodDetails = () => {
   const [tab, setTab] = useState("desc");
-  const [enteredName, setEnteredName] = useState("");
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [reviewMsg, setReviewMsg] = useState("");
+  // const [enteredName, setEnteredName] = useState("");
+  // const [enteredEmail, setEnteredEmail] = useState("");
+  // const [reviewMsg, setReviewMsg] = useState("");
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -38,11 +39,11 @@ const FoodDetails = () => {
     );
   };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
 
-    console.log(enteredName, enteredEmail, reviewMsg);
-  };
+  //   console.log(enteredName, enteredEmail, reviewMsg);
+  // };
 
   useEffect(() => {
     setPreviewImg(product.image01);
@@ -94,7 +95,7 @@ const FoodDetails = () => {
                 <h2 className="product__title mb-3">{title}</h2>
                 <p className="product__price">
                   {" "}
-                  Price: <span>${price}</span>
+                  Price: <span>{price}</span>
                 </p>
                 <p className="category mb-5">
                   Category: <span>{category}</span>
@@ -125,7 +126,38 @@ const FoodDetails = () => {
               {tab === "desc" ? (
                 <div className="tab__content">
                   <p>{desc}</p>
+
+                    {/* filling with data from backend */}
+                  <Table hover>
+                  <thead>
+                    <tr>
+                      <th>
+                        Store
+                      </th>
+                      <th>
+                        Price
+                      </th>
+                      <th>
+                        Shipping fee
+                      </th>
+                      <th>
+                        Link
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.stores.map(store => (
+                      <tr key={store.name}>
+                        <td>{store.name}</td>
+                        <td>{store.price}</td>
+                        <td>{store.fee}</td>
+                        <td>{store.link}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
                 </div>
+
               ) : (
                 <div className="tab__form mb-3">
                   <div className="review pt-5">
@@ -145,7 +177,7 @@ const FoodDetails = () => {
                     <p className="user__email">jhon1@gmail.com</p>
                     <p className="feedback__text">great product</p>
                   </div>
-                  <form className="form" onSubmit={submitHandler}>
+                  {/* <form className="form" onSubmit={submitHandler}>
                     <div className="form__group">
                       <input
                         type="text"
@@ -177,7 +209,7 @@ const FoodDetails = () => {
                     <button type="submit" className="addTOCart__btn">
                       Submit
                     </button>
-                  </form>
+                  </form> */}
                 </div>
               )}
             </Col>
