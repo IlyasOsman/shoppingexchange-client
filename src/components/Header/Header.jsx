@@ -26,6 +26,11 @@ const nav__links = [
     display: "Contact",
     path: "/contact",
   },
+
+  {
+    display: <i class="ri-sun-line"></i>,
+    // <i class="ri-moon-line"></i>
+  },
 ];
 
 const Header = () => {
@@ -74,7 +79,7 @@ const Header = () => {
                   to={item.path}
                   key={index}
                   className={(navClass) =>
-                    navClass.isActive ? "active__menu" : ""
+                    navClass.isActive ? "active__menu nav-item" : "nav-item"
                   }
                 >
                   {item.display}
