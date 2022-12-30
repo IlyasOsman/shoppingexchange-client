@@ -109,6 +109,13 @@ const products = [
         link: "link",
         review: "4.0"
       },
+      {
+        name: "Jumia",
+        price: "2500",
+        fee: "100",
+        link: "link",
+        review: "4.0"
+      },
     ],
   },
 

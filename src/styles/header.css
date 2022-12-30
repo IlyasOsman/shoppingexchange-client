@@ -4,6 +4,10 @@
     line-height: 100px;
   }
  
+  .dark {
+    background-color: #212245;
+    color: white;
+  }
   .logo img {
     object-fit: contain;
     margin-top: -5px;
@@ -114,9 +118,10 @@
     .nav-item {
       background-color: #fde4e4;
       border: 1px solid #df2020;
-      border-radius: 15px;
-      padding: 20px 30px 20px 30px;
-      width: 80%;
+      border-radius: 10px;
+      padding: 15px 30px 15px 30px;
+      width: 90%;
+      margin: -10px;
     }
     
   }

@@ -1,5 +1,6 @@
 .product__item {
     border: 1px solid #fde4e4;
+    border-radius: 10px;
     text-align: center;
     padding: 30px;
     cursor: pointer;

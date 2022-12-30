@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
@@ -9,41 +9,44 @@ import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
 import "../../styles/header.css";
 
-const nav__links = [
-  {
-    display: "Home",
-    path: "/home",
-  },
-  {
-    display: "Products",
-    path: "/products",
-  },
-  {
-    display: "Cart",
-    path: "/cart",
-  },
-  {
-    display: "Contact",
-    path: "/contact",
-  },
 
-  {
-    display: <i class="ri-sun-line"></i>,
-    // <i class="ri-moon-line"></i>
-  },
-];
+
+
 
 const Header = () => {
   const menuRef = useRef(null);
   const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
-
+  
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
+  const [theme, setTheme] = useState('light');
+  const nav__links = [
+    {
+      display: "Home",
+      path: "/home",
+    },
+    {
+      display: "Products",
+      path: "/products",
+    },
+    {
+      display: "Cart",
+      path: "/cart",
+    },
+    {
+      display: "Contact",
+      path: "/contact",
+    },
+
+    {
+      display: theme === 'light' ? <i class="ri-sun-line" onClick={() => setTheme('dark')}></i> : <i class="ri-moon-line" onClick={() => setTheme('light')}></i>,
+    },
+  ];
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
