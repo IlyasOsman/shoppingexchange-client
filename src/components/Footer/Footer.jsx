@@ -4,8 +4,6 @@ import logo from "../../assets/images/res-logo.png";
 
 import "../../styles/footer.css";
 
-import { Link } from "react-router-dom";
-
 const Footer = () => {
   return (
     <footer className="footer">
@@ -76,19 +74,19 @@ const Footer = () => {
             <div className="social__links d-flex align-items-center gap-4 justify-content-end">
               <p className="m-0">Follow: </p>
               <span>
-              <a href="http://www.youtube.com" target='_blank' ><i class="ri-facebook-line"></i></a>
+              <a href="http://www.youtube.com" target='_blank' rel="noreferrer" ><i class="ri-facebook-line"></i></a>
               </span>
 
               <span>
-                <a href="http://www.youtube.com" target='_blank' ><i class="ri-github-line"></i></a>
+                <a href="http://www.youtube.com" target='_blank' rel="noreferrer"><i class="ri-github-line"></i></a>
               </span>
 
               <span>
-                <a href="http://www.youtube.com" target='_blank' ><i class="ri-youtube-line"></i></a>
+                <a href="http://www.youtube.com" target='_blank' rel="noreferrer"><i class="ri-youtube-line"></i></a>
               </span>
 
               <span>
-                <a href="http://www.linkedin.com" target='_blank' ><i class="ri-linkedin-line"></i></a>
+                <a href="http://www.linkedin.com" target='_blank' rel="noreferrer" ><i class="ri-linkedin-line"></i></a>
               </span>
             </div>
           </Col>
