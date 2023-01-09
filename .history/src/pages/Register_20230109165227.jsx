@@ -4,48 +4,37 @@ import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const Login = () => {
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const API = "http://localhost:3000";
-
-  const submitLogin = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-    fetch(`${API}/api/v1/login`, {
-      method: "POST",
-      headers: {
-        Accepts: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: loginUsername,
-          password: loginPassword,
-        },
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => localStorage.setItem("token", data.jwt));
-
-    setLoginUsername("");
-    setLoginPassword("");
   };
 
   return (
-    <Helmet title="Login">
-      <CommonSection title="Login" />
+    <Helmet title="Signup">
+      <CommonSection title="Signup" />
       <section>
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitLogin}>
+              <form className="form mb-5" onSubmit={submitHandler}>
+                <div className="form__group">
+                  <input
+                    type="text"
+                    placeholder="Full name"
+                    required
+                    ref={signupNameRef}
+                  />
+                </div>
                 <div className="form__group">
                   <input
                     type="email"
                     placeholder="Email"
                     required
-                    ref={loginUsername}
+                    ref={signupEmailRef}
                   />
                 </div>
                 <div className="form__group">
@@ -53,16 +42,14 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    ref={loginPassword}
+                    ref={signupPasswordRef}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">
-                  Login
+                  Sign Up
                 </button>
               </form>
-              <Link to="/register">
-                Don't have an account? Create an account
-              </Link>
+              <Link to="/login">Already have an account? Login</Link>
             </Col>
           </Row>
         </Container>
@@ -71,4 +58,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

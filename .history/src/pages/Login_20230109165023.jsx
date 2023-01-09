@@ -53,7 +53,7 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    ref={loginPassword}
+                    ref={loginPasswordRef}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

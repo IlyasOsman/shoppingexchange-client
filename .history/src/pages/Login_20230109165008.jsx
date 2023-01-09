@@ -45,7 +45,7 @@ const Login = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    ref={loginUsername}
+                    ref={lo
                   />
                 </div>
                 <div className="form__group">
@@ -53,7 +53,7 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    ref={loginPassword}
+                    ref={loginPasswordRef}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

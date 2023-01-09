@@ -1,37 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const signupNameRef = useRef();
+  const signupPasswordRef = useRef();
+  const signupEmailRef = useRef();
 
-  const handleSubmit = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
-
-    fetch(`${API}/api/v1/users`, {
-      method: "POST",
-      headers: {
-        Accepts: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username,
-          email,
-          password,
-        },
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-
-    setUsername("");
-    setEmail("");
-    setPassword("");
   };
 
   return (

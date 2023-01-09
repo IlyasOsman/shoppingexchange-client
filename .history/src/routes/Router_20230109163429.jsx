@@ -9,14 +9,11 @@ import Checkout from "../pages/Checkout";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import { useEffect } from "react";
+import {use}
 
 const Routers = () => {
-  useEffect(() => {
-    fetch("http://127.0.0.1:3000")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+
+
 
   return (
     <Routes>
