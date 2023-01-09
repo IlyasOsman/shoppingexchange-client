@@ -30,7 +30,7 @@ const Layout = () => {
   const showCart = useSelector((state) => state.cartUi.cartIsVisible);
   return (
     <div>
-      <Header loggedUsername={loggedUsername} />
+      <Header />
 
       {showCart && <Carts />}
 

@@ -6,7 +6,6 @@ import Routes from "../../routes/Router";
 
 import Carts from "../UI/cart/Carts.jsx";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 
 const Layout = () => {
   const [loggedUsername, setLoggedUsername] = useState("");
@@ -30,7 +29,7 @@ const Layout = () => {
   const showCart = useSelector((state) => state.cartUi.cartIsVisible);
   return (
     <div>
-      <Header loggedUsername={loggedUsername} />
+      <Header />
 
       {showCart && <Carts />}
 

@@ -102,9 +102,7 @@ const Header = ({ loggedUsername }) => {
               <Link to="/login">
                 <i class="ri-user-line"></i>
               </Link>
-              {loggedUsername && (
-                <span className="user__name">{loggedUsername}</span>
-              )}
+              {}
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>

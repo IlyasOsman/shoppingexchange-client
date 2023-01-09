@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "../pages/Home";
@@ -9,8 +9,18 @@ import Checkout from "../pages/Checkout";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import { useEffect } from "react";
 
 const Routers = () => {
+   const [loggedUsername, setLoggedUsername] = useState("");
+   const [loggedEmail, setLoggedEmail] = useState("");
+
+   
+  useEffect(() => {
+    fetch("http://127.0.0.1:3000")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <Routes>
