@@ -4,15 +4,17 @@ import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const Login = () => {
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+const Register = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const API = "http://localhost:3000";
 
-  const submitLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${API}/api/v1/login`, {
+
+    fetch(`${API}/api/v1/users`, {
       method: "POST",
       headers: {
         Accepts: "application/json",
@@ -20,33 +22,43 @@ const Login = () => {
       },
       body: JSON.stringify({
         user: {
-          username: loginUsername,
-          password: loginPassword,
+          username,
+          email,
+          password,
         },
       }),
     })
       .then((res) => res.json())
-      .then((data) => localStorage.setItem("token", data.jwt));
+      .then((data) => console.log(data));
 
-    setLoginUsername("");
-    setLoginPassword("");
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
-    <Helmet title="Login">
-      <CommonSection title="Login" />
+    <Helmet title="Signup">
+      <CommonSection title="Signup" />
       <section>
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitLogin}>
+              <form className="form mb-5" onSubmit={handleSubmit}>
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="username"
+                    placeholder="Full name"
                     required
-                    value={loginUsername}
-                    onChange={(e) => setLoginUsername(e.target.value)}
+                    value={username}
+                    
+                  />
+                </div>
+                <div className="form__group">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    value={email}
                   />
                 </div>
                 <div className="form__group">
@@ -54,17 +66,14 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)}
+                    value={password}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">
-                  Login
+                  Sign Up
                 </button>
               </form>
-              <Link to="/register">
-                Don't have an account? Create an account
-              </Link>
+              <Link to="/login">Already have an account? Login</Link>
             </Col>
           </Row>
         </Container>
@@ -73,4 +82,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -42,8 +42,8 @@ const Login = () => {
               <form className="form mb-5" onSubmit={submitLogin}>
                 <div className="form__group">
                   <input
-                    type="text"
-                    placeholder="username"
+                    type="email"
+                    placeholder="Email"
                     required
                     value={loginUsername}
                     onChange={(e) => setLoginUsername(e.target.value)}

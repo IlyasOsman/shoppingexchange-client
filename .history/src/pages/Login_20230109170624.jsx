@@ -43,7 +43,7 @@ const Login = () => {
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="username"
+                    placeholder=""
                     required
                     value={loginUsername}
                     onChange={(e) => setLoginUsername(e.target.value)}
