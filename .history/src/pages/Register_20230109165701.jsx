@@ -65,7 +65,7 @@ const Register = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    value={password}
+                    ref={signupPasswordRef}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

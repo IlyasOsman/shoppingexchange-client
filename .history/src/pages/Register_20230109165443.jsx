@@ -43,13 +43,13 @@ const Register = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={handleSubmit}>
+              <form className="form mb-5" onSubmit={submitHandler}>
                 <div className="form__group">
                   <input
                     type="text"
                     placeholder="Full name"
                     required
-                    value={username}
+                    ref={signupNameRef}
                   />
                 </div>
                 <div className="form__group">
@@ -57,7 +57,7 @@ const Register = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    value={email}
+                    ref={signupEmailRef}
                   />
                 </div>
                 <div className="form__group">
@@ -65,7 +65,7 @@ const Register = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    value={password}
+                    ref={signupPasswordRef}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

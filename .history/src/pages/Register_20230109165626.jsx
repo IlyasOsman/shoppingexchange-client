@@ -49,7 +49,7 @@ const Register = () => {
                     type="text"
                     placeholder="Full name"
                     required
-                    value={username}
+                    ref={username}
                   />
                 </div>
                 <div className="form__group">
@@ -57,7 +57,7 @@ const Register = () => {
                     type="email"
                     placeholder="Email"
                     required
-                    value={email}
+                    ref={signupEmailRef}
                   />
                 </div>
                 <div className="form__group">
@@ -65,7 +65,7 @@ const Register = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    value={password}
+                    ref={signupPasswordRef}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">
