@@ -29,7 +29,7 @@ const Routers = () => {
           <Route path="/register" element={<Register />} />
         </Routes>
       )}
-    </>
+    
 
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
@@ -41,7 +41,7 @@ const Routers = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
-
+</>
   );
 };
 

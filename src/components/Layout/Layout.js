@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
-import Header from '../Header/Header.jsx';
-import Footer from '../Footer/Footer.jsx';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Routes from '../../routes/Router';
 
-import Carts from '../UI/cart/Carts.jsx';
+import Carts from '../UI/cart/Carts';
 
 const Layout = () => {
   const [loggedUsername, setLoggedUsername] = useState('');
@@ -23,7 +23,6 @@ const Layout = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setLoggedUsername(data.user.username);
         setLoggedEmail(data.user.email);
       });
