@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
-import Header from "../Header/Header.jsx";
-import Footer from "../Footer/Footer.jsx";
-import Routes from "../../routes/Router";
+import { useSelector } from 'react-redux';
+import Header from '../Header/Header.jsx';
+import Footer from '../Footer/Footer.jsx';
+import Routes from '../../routes/Router';
 
-import Carts from "../UI/cart/Carts.jsx";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import Carts from '../UI/cart/Carts.jsx';
 
 const Layout = () => {
-  const [loggedUsername, setLoggedUsername] = useState("");
-  const [loggedEmail, setLoggedEmail] = useState("");
-  const API = "http://localhost:3000";
+  const [loggedUsername, setLoggedUsername] = useState('');
+  const [loggedEmail, setLoggedEmail] = useState('');
+  const API = 'http://localhost:3000';
 
-  const storedToken = localStorage.getItem("token");
+  const storedToken = localStorage.getItem('token');
 
   useEffect(() => {
     fetch(`${API}/api/v1/profile`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => res.json())

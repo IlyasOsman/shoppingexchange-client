@@ -1,35 +1,35 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
-import Carts from "./components/UI/cart/Carts";
-import AllProducts from "./pages/AllProducts";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import ProductDetails from "./pages/ProductDetails";
-import Register from "./pages/Register";
+} from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Carts from './components/UI/cart/Carts';
+import AllProducts from './pages/AllProducts';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import ProductDetails from './pages/ProductDetails';
+import Register from './pages/Register';
 
 function App() {
-  const [loggedUsername, setLoggedUsername] = useState("");
-  const [loggedEmail, setLoggedEmail] = useState("");
-  const API = "http://localhost:3000";
-  const storedToken = localStorage.getItem("token");
+  const [loggedUsername, setLoggedUsername] = useState('');
+  const [loggedEmail, setLoggedEmail] = useState('');
+  const API = 'http://localhost:3000';
+  const storedToken = localStorage.getItem('token');
   console.log(storedToken);
 
   useEffect(() => {
     fetch(`${API}/api/v1/profile`, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
       .then((res) => res.json())
