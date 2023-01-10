@@ -41,16 +41,13 @@ const Cart = () => {
 
               <div className="mt-4">
                 <h6>
-                  Subtotal: $
-                  <span className="cart__subtotal">{totalAmount}</span>
+                  total: Kshs 
+                  <span className="cart__subtotal" > {totalAmount}</span>
                 </h6>
-                <p>Taxes and shipping will calculate at checkout</p>
+                <p>Products you selected appear here.</p>
                 <div className="cart__page-btn">
                   <button className="addTOCart__btn me-4">
                     <Link to="/products">Continue Shopping</Link>
-                  </button>
-                  <button className="addTOCart__btn">
-                    <Link to="/checkout">Proceed to checkout</Link>
                   </button>
                 </div>
               </div>
@@ -75,7 +72,7 @@ const Tr = (props) => {
         <img src={image01} alt="" />
       </td>
       <td className="text-center">{title}</td>
-      <td className="text-center">${price}</td>
+      <td className="text-center">Kshs {price}</td>
       <td className="text-center">{quantity}px</td>
       <td className="text-center cart__item-del">
         <i class="ri-delete-bin-line" onClick={deleteItem}></i>
