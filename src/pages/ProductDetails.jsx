@@ -159,57 +159,27 @@ const FoodDetails = () => {
                 </div>
 
               ) : (
-                <div className="tab__form mb-3">
-                  <div className="review pt-5">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">jhon1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
-                  </div>
-
-                  <div className="review">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">jhon1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
-                  </div>
-
-                  <div className="review">
-                    <p className="user__name mb-0">Jhon Doe</p>
-                    <p className="user__email">jhon1@gmail.com</p>
-                    <p className="feedback__text">great product</p>
-                  </div>
-                  {/* <form className="form" onSubmit={submitHandler}>
-                    <div className="form__group">
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        onChange={(e) => setEnteredName(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                    <div className="form__group">
-                      <input
-                        type="text"
-                        placeholder="Enter your email"
-                        onChange={(e) => setEnteredEmail(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                    <div className="form__group">
-                      <textarea
-                        rows={5}
-                        type="text"
-                        placeholder="Write your review"
-                        onChange={(e) => setReviewMsg(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                    <button type="submit" className="addTOCart__btn">
-                      Submit
-                    </button>
-                  </form> */}
+                <div>
+                <Table hover>
+                  <thead>
+                    <tr>
+                      <th>
+                        Store
+                      </th>
+                      <th>
+                        Average Reviews
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.stores.map(store => (
+                      <tr key={store.name}>
+                        <td>{store.name}</td>
+                        <td>{store.review}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
                 </div>
               )}
             </Col>
