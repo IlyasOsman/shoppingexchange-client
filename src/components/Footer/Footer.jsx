@@ -14,8 +14,8 @@ const Footer = () => {
               <img src={logo} alt="logo" />
               <h5>ShoppingExchange</h5>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nesciunt pariatur accusamus
+              Access all of your favorite online markets in one convenient location 
+              with Shopping Exchange.
               </p>
             </div>
           </Col>
