@@ -31,18 +31,18 @@ const featureData = [
   {
     title: "Quick Delivery",
     imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "Order and get your food delivered within minutes at your doorstep.",
   },
 
   {
     title: "Super Dine In",
     imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "Get the best dine in experience around",
   },
   {
     title: "Easy Pick Up",
     imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: "Order food and pick it up at your convenient time.",
   },
 ];
 
@@ -102,9 +102,12 @@ const Home = () => {
                 </h1>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sint veritatis!
+                Welcome to Shopping Exchange, the ultimate online shopping destination where you can find all of your favorite products from the most 
+                popular online markets in one convenient location. Whether you're 
+                looking for the latest fashion trends, the newest technology, or anything in between, Shopping Exchange 
+                makes it easy for you to find exactly what you're looking for. 
+                With our user-friendly interface, you can browse and compare products, read reviews, and make purchases with just a few clicks. 
+                Start shopping now and experience the convenience and simplicity of Shopping Exchange.
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
@@ -158,12 +161,10 @@ const Home = () => {
                 reliable <span>online store</span>
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                officiis?
+                Compare prices from the most reliable and popular online stores and find amazing discounts and offers available.
               </p>
               <p className="feature__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, eius.{" "}
+                Get the best prices in the market and save more{" "}
               </p>
             </Col>
 
@@ -253,10 +254,12 @@ const Home = () => {
                   Why <span>shoppingExchange?</span>
                 </h2>
                 <p className="tasty__treat-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum, minus. Tempora reprehenderit a corporis velit,
-                  laboriosam vitae ullam, repellat illo sequi odio esse iste
-                  fugiat dolor, optio incidunt eligendi deleniti!
+                Shopping Exchange is the ultimate online shopping destination because it allows you to access all of your favorite 
+                products from the most popular online markets in one convenient location. With our user-friendly interface, you can easily 
+                browse and compare products, read reviews, and make purchases with just a few clicks. 
+                Our platform saves you time and effort by eliminating the need to navigate multiple websites, and it also helps you find the best deals and discounts available.
+                Shopping Exchange also provides a secure and reliable platform for making transactions and ensuring the safety of your personal information. With its convenience 
+                and simplicity, Shopping Exchange makes online shopping easier and more enjoyable than ever before.
                 </p>
 
                 <ListGroup className="mt-4">
@@ -265,9 +268,8 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Check cheap and quality products
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Quia, voluptatibus.
-                    </p>
+                      Find the cheapest quality products from trusted vendors in the market save money.
+                    </p> 
                   </ListGroupItem>
 
                   <ListGroupItem className="border-0 ps-0">
@@ -275,8 +277,8 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Quality support
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                     Our team is always dedicated to ensure users get the best 
+                     experience and we are always online to help with any issue.
                     </p>
                   </ListGroupItem>
 
@@ -285,8 +287,7 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Reliable store {" "}
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                      Our products meet the highest standards from the most trusted vendors.
                     </p>
                   </ListGroupItem>
                 </ListGroup>
@@ -322,9 +323,7 @@ const Home = () => {
                   What our <span>customers</span> are saying
                 </h2>
                 <p className="testimonial__desc">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Distinctio quasi qui minus quos sit perspiciatis inventore
-                  quis provident placeat fugiat!
+                  We offer the best price comparison out there but we shall let you be the judge of that.
                 </p>
 
                 <TestimonialSlider />
