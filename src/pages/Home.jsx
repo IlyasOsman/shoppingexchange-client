@@ -12,9 +12,9 @@ import Category from "../components/UI/category/Category.jsx";
 
 import "../styles/home.css";
 
-import featureImg01 from "../assets/images/service-01.png";
-import featureImg02 from "../assets/images/service-02.png";
-import featureImg03 from "../assets/images/service-03.png";
+import featureVid01 from "../assets/images/video1.mp4";
+import featureVid02 from "../assets/images/video2.mp4";
+import featureVid03 from "../assets/images/video1.mp4";
 
 import products from "../assets/fake-data/products.js";
 
@@ -29,20 +29,20 @@ import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
   {
-    title: "Quick Delivery",
-    imgUrl: featureImg01,
-    desc: "Order and get your food delivered within minutes at your doorstep.",
+    title: "Quick market analysis",
+    videoUrl: featureVid01,
+    desc: "Helping in identify the right products in the influx online market",
   },
 
   {
-    title: "Super Dine In",
-    imgUrl: featureImg02,
-    desc: "Get the best dine in experience around",
+    title: "Online stores around the world",
+    videoUrl: featureVid02,
+    desc: "Get the best online reliable stores around the world",
   },
   {
-    title: "Easy Pick Up",
-    imgUrl: featureImg03,
-    desc: "Order food and pick it up at your convenient time.",
+    title: "Easily Navigate",
+    videoUrl: featureVid03,
+    desc: "Easily understand the complex online markets by comparing prices.",
   },
 ];
 
@@ -112,7 +112,7 @@ const Home = () => {
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    Check now <i class="ri-arrow-right-s-line"></i>
+                    <Link to='/login'> Check now <i class="ri-arrow-right-s-line"></i></Link> 
                   </button>
 
                   <button className="all__products-btn">
@@ -169,16 +169,18 @@ const Home = () => {
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="6" sm="6" key={index} className="mt-5">
-                <div className="feature__item text-center px-5 py-3">
-                  <img
-                    src={item.imgUrl}
-                    alt="feature-img"
-                    className="w-25 mb-3"
-                  />
-                  <h5 className=" fw-bold mb-3">{item.title}</h5>
-                  <p>{item.desc}</p>
-                </div>
+            <Col sm="12" md="4" lg="4" key={index} className="mt-5">
+              <div className="feature__item text-center px-0 py-0">
+                <video 
+                  src={item.videoUrl}
+                  alt="feature-video"
+                  className="d-block m-auto mb-3 big-video"
+                  loop
+                  autoPlay
+                />
+                <h5 className=" fw-bold mb-3">{item.title}</h5>
+                <p>{item.desc}</p>
+              </div>
               </Col>
             ))}
           </Row>

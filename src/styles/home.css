@@ -76,6 +76,12 @@
     color: #777;
     line-height: 30px;
   }
+
+  .big-video {
+    height: 80%;
+    width: 100%;
+    border-radius: 8px;
+  }
   
   @media only screen and (max-width: 768px) {
     .hero__content h5 {
