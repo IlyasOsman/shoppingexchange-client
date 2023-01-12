@@ -41,7 +41,7 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link",
+        link: "https://amazon.com",
         review: "4.0"
       },
       {
@@ -136,7 +136,7 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
       {
@@ -165,7 +165,7 @@ const products = [
         name: "Amazon",
         price: "899",
         fee: "130",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
       {
@@ -193,7 +193,7 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
       {
@@ -222,7 +222,7 @@ const products = [
         name: "Amazon",
         price: "125",
         fee: "130",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
       {
@@ -251,14 +251,14 @@ const products = [
         name: "Amazon",
         price: "2500",
         fee: "130",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
       {
         name: "Jumia",
         price: "3500",
         fee: "100",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
     ],
@@ -287,7 +287,7 @@ const products = [
         name: "Jumia",
         price: "13000",
         fee: "100",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
     ],
@@ -309,7 +309,7 @@ const products = [
         name: "Amazon",
         price: "25",
         fee: "130",
-        link: "link",
+        link: "https://www.amazon.com",
         review: "4.0"
       },
       {
@@ -338,7 +338,8 @@ const products = [
         name: "Amazon",
         price: "32",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",

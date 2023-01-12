@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap"
 
 import products from "../assets/fake-data/products";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
@@ -151,7 +151,9 @@ const FoodDetails = () => {
                         <td>{store.name}</td>
                         <td>{store.price}</td>
                         <td>{store.fee}</td>
-                        <td>{store.link}</td>
+                        <td>
+                          <button onClick={() => window.open(store.link,'_blank')} className="addTOCart__btn" >visit store</button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
