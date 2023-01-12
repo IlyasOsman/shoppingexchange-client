@@ -102,9 +102,7 @@ const Home = () => {
                 </h1>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sint veritatis!
+                Welcome to Shopping Exchange, the ultimate online shopping destination where you can find all of your favorite products from the most popular online markets in one convenient location. Whether you're looking for the latest fashion trends, the newest technology, or anything in between, Shopping Exchange makes it easy for you to find exactly what you're looking for. With our user-friendly interface, you can browse and compare products, read reviews, and make purchases with just a few clicks. Start shopping now and experience the convenience and simplicity of Shopping Exchange.
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
