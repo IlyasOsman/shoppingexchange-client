@@ -159,7 +159,7 @@ const FoodDetails = () => {
                 </div>
 
               ) : (
-                <div>
+                <div className="tab__content">
                 <Table hover>
                   <thead>
                     <tr>
