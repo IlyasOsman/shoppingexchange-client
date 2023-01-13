@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import "../../../styles/product-card.css";
 
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const ProductCard = (props) => {
-  const { id, title, image01, price } = props.item;
+  const { id, title, image01, price, stores } = props.item;
   const dispatch = useDispatch();
 
   const addToCart = () => {
@@ -33,8 +34,8 @@ const ProductCard = (props) => {
           <Link to={`/products/${id}`}>{title}</Link>
         </h5>
         <div >
-          <span className="product__price">From {price} in 2 stores</span>
-         
+          <span className="product__price">From {price} in {stores.length} stores</span>
+        
         </div> 
         <div className="d-flex align-items-centre justify-content-end" >
           <button className="addTOCart__btn button" onClick={addToCart}>

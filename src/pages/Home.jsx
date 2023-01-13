@@ -12,9 +12,9 @@ import Category from "../components/UI/category/Category.jsx";
 
 import "../styles/home.css";
 
-import featureImg01 from "../assets/images/service-01.png";
-import featureImg02 from "../assets/images/service-02.png";
-import featureImg03 from "../assets/images/service-03.png";
+import featureVid01 from "../assets/images/video1.mp4";
+import featureVid02 from "../assets/images/video2.mp4";
+import featureVid03 from "../assets/images/video1.mp4";
 
 import products from "../assets/fake-data/products.js";
 
@@ -29,20 +29,20 @@ import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
   {
-    title: "Quick Delivery",
-    imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    title: "Quick market analysis",
+    videoUrl: featureVid01,
+    desc: "Helping in identify the right products in the influx online market",
   },
 
   {
-    title: "Super Dine In",
-    imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    title: "Online stores around the world",
+    videoUrl: featureVid02,
+    desc: "Get the best online reliable stores around the world",
   },
   {
-    title: "Easy Pick Up",
-    imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    title: "Easily Navigate",
+    videoUrl: featureVid03,
+    desc: "Easily understand the complex online markets by comparing prices.",
   },
 ];
 
@@ -102,14 +102,17 @@ const Home = () => {
                 </h1>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sint veritatis!
+                Welcome to Shopping Exchange, the ultimate online shopping destination where you can find all of your favorite products from the most 
+                popular online markets in one convenient location. Whether you're 
+                looking for the latest fashion trends, the newest technology, or anything in between, Shopping Exchange 
+                makes it easy for you to find exactly what you're looking for. 
+                With our user-friendly interface, you can browse and compare products, read reviews, and make purchases with just a few clicks. 
+                Start shopping now and experience the convenience and simplicity of Shopping Exchange.
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
                   <button className="order__btn d-flex align-items-center justify-content-between">
-                    Check now <i class="ri-arrow-right-s-line"></i>
+                    <Link to='/login'> Check now <i class="ri-arrow-right-s-line"></i></Link> 
                   </button>
 
                   <button className="all__products-btn">
@@ -158,26 +161,26 @@ const Home = () => {
                 reliable <span>online store</span>
               </h2>
               <p className="mb-1 mt-4 feature__text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-                officiis?
+                Compare prices from the most reliable and popular online stores and find amazing discounts and offers available.
               </p>
               <p className="feature__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, eius.{" "}
+                Get the best prices in the market and save more{" "}
               </p>
             </Col>
 
             {featureData.map((item, index) => (
-              <Col lg="4" md="6" sm="6" key={index} className="mt-5">
-                <div className="feature__item text-center px-5 py-3">
-                  <img
-                    src={item.imgUrl}
-                    alt="feature-img"
-                    className="w-25 mb-3"
-                  />
-                  <h5 className=" fw-bold mb-3">{item.title}</h5>
-                  <p>{item.desc}</p>
-                </div>
+            <Col sm="12" md="4" lg="4" key={index} className="mt-5">
+              <div className="feature__item text-center px-0 py-0">
+                <video 
+                  src={item.videoUrl}
+                  alt="feature-video"
+                  className="d-block m-auto mb-3 big-video"
+                  loop
+                  autoPlay
+                />
+                <h5 className=" fw-bold mb-3">{item.title}</h5>
+                <p>{item.desc}</p>
+              </div>
               </Col>
             ))}
           </Row>
@@ -253,10 +256,12 @@ const Home = () => {
                   Why <span>shoppingExchange?</span>
                 </h2>
                 <p className="tasty__treat-desc">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolorum, minus. Tempora reprehenderit a corporis velit,
-                  laboriosam vitae ullam, repellat illo sequi odio esse iste
-                  fugiat dolor, optio incidunt eligendi deleniti!
+                Shopping Exchange is the ultimate online shopping destination because it allows you to access all of your favorite 
+                products from the most popular online markets in one convenient location. With our user-friendly interface, you can easily 
+                browse and compare products, read reviews, and make purchases with just a few clicks. 
+                Our platform saves you time and effort by eliminating the need to navigate multiple websites, and it also helps you find the best deals and discounts available.
+                Shopping Exchange also provides a secure and reliable platform for making transactions and ensuring the safety of your personal information. With its convenience 
+                and simplicity, Shopping Exchange makes online shopping easier and more enjoyable than ever before.
                 </p>
 
                 <ListGroup className="mt-4">
@@ -265,9 +270,8 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Check cheap and quality products
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Quia, voluptatibus.
-                    </p>
+                      Find the cheapest quality products from trusted vendors in the market save money.
+                    </p> 
                   </ListGroupItem>
 
                   <ListGroupItem className="border-0 ps-0">
@@ -275,8 +279,8 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Quality support
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                     Our team is always dedicated to ensure users get the best 
+                     experience and we are always online to help with any issue.
                     </p>
                   </ListGroupItem>
 
@@ -285,8 +289,7 @@ const Home = () => {
                       <i class="ri-checkbox-circle-line"></i> Reliable store {" "}
                     </p>
                     <p className="choose__us-desc">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Qui, earum.
+                      Our products meet the highest standards from the most trusted vendors.
                     </p>
                   </ListGroupItem>
                 </ListGroup>
@@ -322,9 +325,7 @@ const Home = () => {
                   What our <span>customers</span> are saying
                 </h2>
                 <p className="testimonial__desc">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Distinctio quasi qui minus quos sit perspiciatis inventore
-                  quis provident placeat fugiat!
+                  We offer the best price comparison out there but we shall let you be the judge of that.
                 </p>
 
                 <TestimonialSlider />

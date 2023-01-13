@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ListGroup } from "reactstrap";
-import { Link } from "react-router-dom";
+
 import CartItem from "./CartItem";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -38,13 +38,8 @@ const Carts = () => {
 
         <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
-            Subtotal : <span>${totalAmount}</span>
+            Subtotal : <span>Kshs {totalAmount}</span>
           </h6>
-          <button>
-            <Link to="/checkout" onClick={toggleCart}>
-              Checkout
-            </Link>
-          </button>
         </div>
       </ListGroup>
     </div>

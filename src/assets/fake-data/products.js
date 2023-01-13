@@ -33,20 +33,23 @@ const products = [
     image03: product_01_image_03,
     category: "Fashion",
 
-    desc: "Material Cotton : Lycra T-shirt, Collar shape: round collar T-shirt, Colour: Multicolour T-shirt, Style: casual T-shirt, Model : slim model T-shirt, Quality: Print T-shirt, Perfect: Finishing, Attention: Please For transportation needs, the cloth that you've received will have a fold phenomenon. Please don't worry this fold situation will disappear after the first time you clear or ironing. About color Pictures are only samples for reference. Due to limitations in photography and the inevitable differences in monitor settings, the colors shown in the photograph may not correspond 100% to those in the items themselves. About size All dimensions are measured by hand, there may be 2-3cm deviations. Please ignore the tag size comes with the cloth. The tag size sometimes can be a larger than our description size because those are for Chinese. We are 1 or 2 sizes smaller than European and  African people Choose the larger size if your size between two sizes. Thank you ",
+    
+    desc: "- 4pcs T-shirts in one package. - Material Cotto. - Lycra T-shirt. - Collar shape: round collar T-shirt. - Colour: Multicolour T-shirt. - Style: casual T-shirt.  - Model: slim model T-shirt . Quality Print T-shirt. \n - Perfect Finishing. \n - Attention Please:  For transportation needs, the cloth that you've received will have a fold phenomenon. Please don't worry, this fold situation will disappear after the first time you clear or ironing. \n - About color: Pictures are only samples for reference. Due to limitations in photography and the inevitable differences in monitor settings, the colors shown in the photograph may not correspond 100% to those in the items themselves. \n - About size: All dimensions are measured by hand, there may be 2-3cm deviations. \n Please ignore the tag size comes with the cloth. The tag size sometimes can be a larger than our description size because those are for Chinese. \n We are 1 or 2 sizes smaller than European and  African people，Choose the larger size if your size between two sizes.Thank you." ,
 
     stores: [
       {
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link"
+        link: "https://amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "350",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
 
@@ -68,13 +71,15 @@ const products = [
         name: "Amazon",
         price: "43500",
         fee: "1200",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "45000",
         fee: "1000",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -95,13 +100,22 @@ const products = [
         name: "Amazon",
         price: "2700",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "2500",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
+      },
+      {
+        name: "Jumia",
+        price: "2500",
+        fee: "100",
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -122,13 +136,15 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "110",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -149,13 +165,15 @@ const products = [
         name: "Amazon",
         price: "899",
         fee: "130",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "999",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -175,13 +193,15 @@ const products = [
         name: "Amazon",
         price: "325",
         fee: "130",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "350",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -202,13 +222,15 @@ const products = [
         name: "Amazon",
         price: "125",
         fee: "130",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "110",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -229,13 +251,15 @@ const products = [
         name: "Amazon",
         price: "2500",
         fee: "130",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "3500",
         fee: "100",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
     ],
   },
@@ -256,13 +280,15 @@ const products = [
         name: "Amazon",
         price: "13250",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "13000",
         fee: "100",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
     ],
   },
@@ -283,13 +309,15 @@ const products = [
         name: "Amazon",
         price: "25",
         fee: "130",
-        link: "link"
+        link: "https://www.amazon.com",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "50",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -310,13 +338,15 @@ const products = [
         name: "Amazon",
         price: "32",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "35",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -337,13 +367,15 @@ const products = [
         name: "Amazon",
         price: "35",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "30",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },
@@ -364,13 +396,15 @@ const products = [
         name: "Amazon",
         price: "32",
         fee: "130",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
       {
         name: "Jumia",
         price: "30",
         fee: "100",
-        link: "link"
+        link: "link",
+        review: "4.0"
       },
     ],
   },

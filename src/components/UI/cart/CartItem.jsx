@@ -1,5 +1,6 @@
 import React from "react";
 import { ListGroupItem } from "reactstrap";
+import { Link } from "react-router-dom";
 
 import "../../../styles/cart-item.css";
 
@@ -33,13 +34,16 @@ const CartItem = ({ item }) => {
   return (
     <ListGroupItem className="border-0 cart__item">
       <div className="cart__item-info d-flex gap-2">
-        <img src={image01} alt="product-img" />
+
+      <Link to={`/products/${id}`}><img src={image01} alt="product-img" /></Link>
+        
+
 
         <div className="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
           <div>
-            <h6 className="cart__product-title">{title}</h6>
+          <Link to={`/products/${id}`}><h6 className="cart__product-title">{title}</h6></Link>
             <p className=" d-flex align-items-center gap-5 cart__product-price">
-              {quantity}x <span>${totalPrice}</span>
+              {quantity}x <span>Kshs {totalPrice}</span>
             </p>
             <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
               <span className="increase__btn" onClick={incrementItem}>
