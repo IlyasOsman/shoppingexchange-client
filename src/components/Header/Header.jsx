@@ -9,22 +9,18 @@ import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
 import "../../styles/header.css";
 
-
-
-
-
-const Header = () => {
+const Header = ({ loggedUsername }) => {
   const menuRef = useRef(null);
   const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const dispatch = useDispatch();
-  
+
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
   const nav__links = [
     {
       display: "Home",
@@ -44,7 +40,12 @@ const Header = () => {
     },
 
     {
-      display: theme === 'light' ? <i class="ri-sun-line" onClick={() => setTheme('dark')}></i> : <i class="ri-moon-line" onClick={() => setTheme('light')}></i>,
+      display:
+        theme === "light" ? (
+          <i class="ri-sun-line" onClick={() => setTheme("dark")}></i>
+        ) : (
+          <i class="ri-moon-line" onClick={() => setTheme("light")}></i>
+        ),
     },
   ];
 
@@ -67,11 +68,10 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
-          <div className="logo" >
+          <div className="logo">
             <Link to="/home">
               <img src={logo} alt="logo" height="51 px" width="51 px" />
             </Link>
-            
           </div>
 
           {/* ======= menu ======= */}
@@ -99,9 +99,12 @@ const Header = () => {
             </span>
 
             <span className="user">
-              <Link to="/login">
+              <Link to="/profile">
                 <i class="ri-user-line"></i>
               </Link>
+              {loggedUsername && (
+                <span className="user__name">{loggedUsername}</span>
+              )}
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>

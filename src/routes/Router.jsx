@@ -8,6 +8,7 @@ import Cart from "../pages/Cart";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Profile from "../pages/Profile";
 
 const Routers = () => {
   return (
@@ -20,6 +21,7 @@ const Routers = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/profile" element={<Profile />}/>
     </Routes>
   );
 };

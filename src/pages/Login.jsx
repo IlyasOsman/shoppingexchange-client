@@ -1,15 +1,38 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const loginNameRef = useRef();
-  const loginPasswordRef = useRef();
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const navigate = useNavigate();
+  const API = "http://localhost:3000";
 
-  const submitHandler = (e) => {
+  const submitLogin = (e) => {
     e.preventDefault();
+    fetch(`${API}/api/v1/login`, {
+      method: "POST",
+      headers: {
+        Accepts: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user: {
+          username: loginUsername,
+          password: loginPassword,
+        },
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => localStorage.setItem("token", data.jwt));
+
+    setLoginUsername("");
+    setLoginPassword("");
+
+    navigate("/home");
   };
 
   return (
@@ -19,13 +42,14 @@ const Login = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitHandler}>
+              <form className="form mb-5" onSubmit={submitLogin}>
                 <div className="form__group">
                   <input
-                    type="email"
-                    placeholder="Email"
+                    type="text"
+                    placeholder="username"
                     required
-                    ref={loginNameRef}
+                    value={loginUsername}
+                    onChange={(e) => setLoginUsername(e.target.value)}
                   />
                 </div>
                 <div className="form__group">
@@ -33,7 +57,8 @@ const Login = () => {
                     type="password"
                     placeholder="Password"
                     required
-                    ref={loginPasswordRef}
+                    value={loginPassword}
+                    onChange={(e) => setLoginPassword(e.target.value)}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">
