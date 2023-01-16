@@ -34,7 +34,7 @@ const ProductCard = (props) => {
           <Link to={`/products/${id}`}>{title}</Link>
         </h5>
         <div >
-          <span className="product__price">From {price} in {stores.length} stores</span>
+          <span className="product__price">From Kshs {price} in {stores.length} stores</span>
         
         </div> 
         <div className="d-flex align-items-centre justify-content-end" >
