@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import {
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Carts from './components/UI/cart/Carts';
 import AllProducts from './pages/AllProducts';
@@ -39,7 +35,7 @@ function App() {
   const showCart = useSelector((state) => state.cartUi.cartIsVisible);
   return (
     <>
-      {storedToken ? (
+      {storedToken !== 'null' ? (
         <>
           <Header loggedUsername={loggedUsername} />
 

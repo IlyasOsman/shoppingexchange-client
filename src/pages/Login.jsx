@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
-import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
+import Helmet from '../components/Helmet/Helmet';
+
+import CommonSection from '../components/UI/common-section/CommonSection';
 
 const Login = () => {
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [loginUsername, setLoginUsername] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
   const navigate = useNavigate();
-  const API = "http://localhost:3000";
+  const API = 'http://localhost:3000';
 
   const submitLogin = (e) => {
     e.preventDefault();
     fetch(`${API}/api/v1/login`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accepts: "application/json",
-        "Content-Type": "application/json",
+        Accepts: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user: {
@@ -27,12 +27,12 @@ const Login = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => localStorage.setItem("token", data.jwt));
+      .then((data) => localStorage.setItem('token', data.jwt));
 
-    setLoginUsername("");
-    setLoginPassword("");
+    setLoginUsername('');
+    setLoginPassword('');
 
-    navigate("/home");
+    navigate('/home');
   };
 
   return (
@@ -66,7 +66,7 @@ const Login = () => {
                 </button>
               </form>
               <Link to="/register">
-                Don't have an account? Create an account
+                Dont have an account? Create an account
               </Link>
             </Col>
           </Row>

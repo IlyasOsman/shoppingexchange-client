@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../components/UI/common-section/CommonSection";
-import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import Helmet from '../components/Helmet/Helmet';
+import CommonSection from '../components/UI/common-section/CommonSection';
+import { Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const API = "http://localhost:3000";
+  const API = 'http://localhost:3000';
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     fetch(`${API}/api/v1/users`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        Accepts: "application/json",
-        "Content-Type": "application/json",
+        Accepts: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         user: {
@@ -31,9 +31,9 @@ const Register = () => {
       .then((res) => res.json())
       .then((data) => console.log(data));
 
-    setUsername("");
-    setEmail("");
-    setPassword("");
+    setUsername('');
+    setEmail('');
+    setPassword('');
   };
 
   return (

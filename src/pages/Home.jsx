@@ -1,87 +1,88 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Helmet from "../components/Helmet/Helmet.js";
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import Helmet from '../components/Helmet/Helmet.js';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
-import heroImg from "../assets/images/hero.png";
-import "../styles/hero-section.css";
+import heroImg from '../assets/images/hero.png';
+import '../styles/hero-section.css';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import Category from "../components/UI/category/Category.jsx";
+import Category from '../components/UI/category/Category.jsx';
 
-import "../styles/home.css";
+import '../styles/home.css';
 
-import featureImg01 from "../assets/images/service-01.png";
-import featureImg02 from "../assets/images/service-02.png";
-import featureImg03 from "../assets/images/service-03.png";
+import featureImg01 from '../assets/images/service-01.png';
+import featureImg02 from '../assets/images/service-02.png';
+import featureImg03 from '../assets/images/service-03.png';
 
-import products from "../assets/fake-data/products.js";
+import products from '../assets/fake-data/products.js';
 
+import ProductCard from '../components/UI/product-card/ProductCard.jsx';
 
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import whyImg from '../assets/images/location.png';
 
-import whyImg from "../assets/images/location.png";
+import networkImg from '../assets/images/network.png';
 
-import networkImg from "../assets/images/network.png";
-
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
+import TestimonialSlider from '../components/UI/slider/TestimonialSlider.jsx';
 
 const featureData = [
   {
-    title: "Quick Delivery",
+    title: 'Quick Delivery',
     imgUrl: featureImg01,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
 
   {
-    title: "Super Dine In",
+    title: 'Super Dine In',
     imgUrl: featureImg02,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
   {
-    title: "Easy Pick Up",
+    title: 'Easy Pick Up',
     imgUrl: featureImg03,
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.",
+    desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, doloremque.',
   },
 ];
 
 const Home = () => {
-  const [category, setCategory] = useState("ALL");
+  const [category, setCategory] = useState('ALL');
   const [allProducts, setAllProducts] = useState(products);
 
   const [hotDeal, setHotDeal] = useState([]);
 
   useEffect(() => {
-    const filteredDeal = products.filter((item) => item.category === "Electronics");
+    const filteredDeal = products.filter(
+      (item) => item.category === 'Electronics',
+    );
     const sliceDeal = filteredDeal.slice(0, 4);
     setHotDeal(sliceDeal);
   }, []);
 
   useEffect(() => {
-    if (category === "ALL") {
+    if (category === 'ALL') {
       setAllProducts(products);
     }
 
-    if (category === "FASHION") {
+    if (category === 'FASHION') {
       const filteredProducts = products.filter(
-        (item) => item.category === "Fashion"
+        (item) => item.category === 'Fashion',
       );
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "ELECTRONICS") {
+    if (category === 'ELECTRONICS') {
       const filteredProducts = products.filter(
-        (item) => item.category === "Electronics"
+        (item) => item.category === 'Electronics',
       );
 
       setAllProducts(filteredProducts);
     }
 
-    if (category === "BEAUTY") {
+    if (category === 'BEAUTY') {
       const filteredProducts = products.filter(
-        (item) => item.category === "Beauty"
+        (item) => item.category === 'Beauty',
       );
 
       setAllProducts(filteredProducts);
@@ -103,8 +104,9 @@ const Home = () => {
 
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sit amet, consectetur adipisicing elit. Qui
-                  magni delectus tenetur autem, sint veritatis!
+                  magni delectus tenetur autem, sit amet, consectetur
+                  adipisicing elit. Qui magni delectus tenetur autem, sint
+                  veritatis!
                 </p>
 
                 <div className="hero__btns d-flex align-items-center gap-5 mt-4">
@@ -121,14 +123,14 @@ const Home = () => {
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-car-line"></i>
-                    </span>{" "}
+                    </span>{' '}
                     compare shipping charge
                   </p>
 
                   <p className=" d-flex align-items-center gap-2 ">
                     <span className="shipping__icon">
                       <i class="ri-shield-check-line"></i>
-                    </span>{" "}
+                    </span>{' '}
                     100% secure
                   </p>
                 </div>
@@ -152,7 +154,9 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="text-center">
-              <h5 className="feature__subtitle mb-4">We provide you with latest</h5>
+              <h5 className="feature__subtitle mb-4">
+                We provide you with latest
+              </h5>
               <h2 className="feature__title">Products comparison from </h2>
               <h2 className="feature__title">
                 reliable <span>online store</span>
@@ -163,7 +167,7 @@ const Home = () => {
               </p>
               <p className="feature__text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aperiam, eius.{" "}
+                Aperiam, eius.{' '}
               </p>
             </Col>
 
@@ -195,36 +199,35 @@ const Home = () => {
               <div className="product__category d-flex align-items-center justify-content-center gap-4">
                 <button
                   className={`all__btn  ${
-                    category === "ALL" ? "productBtnActive" : ""
+                    category === 'ALL' ? 'productBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("ALL")}
+                  onClick={() => setCategory('ALL')}
                 >
                   All
                 </button>
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "FASHION" ? "productBtnActive" : ""
+                    category === 'FASHION' ? 'productBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("FASHION")}
+                  onClick={() => setCategory('FASHION')}
                 >
                   Fashion
                 </button>
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "ELECTRONICS" ? "productBtnActive" : ""
+                    category === 'ELECTRONICS' ? 'productBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("ELECTRONICS")}
+                  onClick={() => setCategory('ELECTRONICS')}
                 >
-              
                   Electronics
                 </button>
 
                 <button
                   className={`d-flex align-items-center gap-2 ${
-                    category === "BEAUTY" ? "productBtnActive" : ""
+                    category === 'BEAUTY' ? 'productBtnActive' : ''
                   } `}
-                  onClick={() => setCategory("BEAUTY")}
+                  onClick={() => setCategory('BEAUTY')}
                 >
                   Beauty
                 </button>
@@ -262,7 +265,8 @@ const Home = () => {
                 <ListGroup className="mt-4">
                   <ListGroupItem className="border-0 ps-0">
                     <p className=" choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i> Check cheap and quality products
+                      <i class="ri-checkbox-circle-line"></i> Check cheap and
+                      quality products
                     </p>
                     <p className="choose__us-desc">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -282,7 +286,7 @@ const Home = () => {
 
                   <ListGroupItem className="border-0 ps-0">
                     <p className="choose__us-title d-flex align-items-center gap-2 ">
-                      <i class="ri-checkbox-circle-line"></i> Reliable store {" "}
+                      <i class="ri-checkbox-circle-line"></i> Reliable store{' '}
                     </p>
                     <p className="choose__us-desc">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
