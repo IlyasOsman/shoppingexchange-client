@@ -9,7 +9,7 @@ import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
 
 import "../../styles/header.css";
 
-const Header = ({ loggedUsername }) => {
+const Header = ( ) => {
   const menuRef = useRef(null);
   const headerRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -64,6 +64,9 @@ const Header = ({ loggedUsername }) => {
     return () => window.removeEventListener("scroll");
   }, []);
 
+
+  const { user } = useSelector((state) => state.auth)
+
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -99,12 +102,17 @@ const Header = ({ loggedUsername }) => {
             </span>
 
             <span className="user">
-              <Link to="/profile">
+              {
+                user ? 
+                <Link to="/profile">
                 <i class="ri-user-line"></i>
-              </Link>
-              {loggedUsername && (
-                <span className="user__name">{loggedUsername}</span>
-              )}
+                </Link> 
+                :
+                <Link to="/login">
+                <i class="ri-user-line"></i>
+                </Link>
+              }
+              
             </span>
 
             <span className="mobile__menu" onClick={toggleMenu}>

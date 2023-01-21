@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import "../styles/product-details.css";
 import ProductCard from "../components/UI/product-card/ProductCard";
+import Spinner from "../components/UI/spinner/Spinner";
 
 const ProductDetails = () => {
   const [tab, setTab] = useState("desc");
@@ -55,7 +56,7 @@ const ProductDetails = () => {
   }, [product]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
 

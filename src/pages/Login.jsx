@@ -1,39 +1,65 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
+import Spinner from "../components/UI/spinner/Spinner"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { login, reset } from '../store/user/authSlice'
 
 const Login = () => {
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const navigate = useNavigate();
-  const API = "http://localhost:3000";
+  
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  })
 
-  const submitLogin = (e) => {
-    e.preventDefault();
-    fetch(`${API}/api/v1/login`, {
-      method: "POST",
-      headers: {
-        Accepts: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: loginUsername,
-          password: loginPassword,
-        },
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => localStorage.setItem("token", data.jwt));
+  const { username, password } = formData
 
-    setLoginUsername("");
-    setLoginPassword("");
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
-    navigate("/home");
-  };
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message)
+      navigate('/login')
+    }
+
+    if (isSuccess && user) {
+      navigate('/')
+    }
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    const userData = {
+      username,
+      password,
+    }
+
+    dispatch(login(userData))
+  }
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
 
   return (
     <Helmet title="Login">
@@ -42,23 +68,25 @@ const Login = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
-              <form className="form mb-5" onSubmit={submitLogin}>
+              <form className="form mb-5" onSubmit={onSubmit}>
                 <div className="form__group">
                   <input
                     type="text"
-                    placeholder="username"
+                    placeholder="Enter Username"
                     required
-                    value={loginUsername}
-                    onChange={(e) => setLoginUsername(e.target.value)}
+                    name="username"
+                    value={username}
+                    onChange={onChange}
                   />
                 </div>
                 <div className="form__group">
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Enter Password"
                     required
-                    value={loginPassword}
-                    onChange={(e) => setLoginPassword(e.target.value)}
+                    name="password"
+                    value={password}
+                    onChange={onChange}
                   />
                 </div>
                 <button type="submit" className="addTOCart__btn">

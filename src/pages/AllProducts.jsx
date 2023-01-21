@@ -6,6 +6,7 @@ import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
 import "../styles/all-products.css";
 import "../styles/pagination.css";
+import Spinner from "../components/UI/spinner/Spinner";
 
 const AllProducts = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,7 +48,7 @@ const AllProducts = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   return (
