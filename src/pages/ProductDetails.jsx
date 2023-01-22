@@ -184,7 +184,10 @@ const ProductDetails = () => {
                     {product.stores.map(store => (
                       <tr key={store.name}>
                         <td>{store.name}</td>
-                        <td>{store.review}</td>
+                        <td>{store.reviews}</td>
+                        <td>
+                          <button onClick={() => window.open(store.link,'_blank')} className="addTOCart__btn" >visit store</button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>

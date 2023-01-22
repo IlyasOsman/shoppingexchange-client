@@ -14,10 +14,17 @@ const register = async (userData) => {
       'Content-Type': 'application/json'
     }
   });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message);
+  }
+
   const data = await response.json();
 
   if (data) {
     localStorage.setItem('user', JSON.stringify(data));
+    localStorage.setItem('token', data.jwt);
   }
 
   return data;
@@ -37,10 +44,16 @@ const login = async (userData) => {
       'Content-Type': 'application/json'
     }
   });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message);
+  }
   const data = await response.json();
 
   if (data) {
     localStorage.setItem('user', JSON.stringify(data));
+    localStorage.setItem('token', data.jwt);
   }
 
   return data;
@@ -48,6 +61,7 @@ const login = async (userData) => {
 
 const logout = () => {
   localStorage.removeItem('user');
+  localStorage.removeItem('token');
 };
 
 const authService = {

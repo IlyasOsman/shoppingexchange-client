@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { toast } from 'react-toastify';
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
@@ -7,7 +6,9 @@ import Spinner from "../components/UI/spinner/Spinner"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login, reset } from '../store/user/authSlice'
+import { login, reset } from '../store/user/authSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   
@@ -27,11 +28,18 @@ const Login = () => {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message)
+      toast.error("Invalid username or password", {
+        position: "top-center",
+        autoClose: 3000,
+      });
       navigate('/login')
     }
 
     if (isSuccess && user) {
+      toast.success("You are logged in!", {
+        position: "top-center",
+        autoClose: 3000,
+      });
       navigate('/')
     }
 
@@ -96,6 +104,9 @@ const Login = () => {
               <Link to="/register">
                 Don't have an account? Create an account
               </Link>
+
+              <ToastContainer />
+
             </Col>
           </Row>
         </Container>

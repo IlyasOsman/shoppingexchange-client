@@ -4,9 +4,10 @@ import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from 'react-toastify';
 import { register, reset } from '../store/user/authSlice'
-import Spinner from '../components/UI/spinner/Spinner'
+import Spinner from '../components/UI/spinner/Spinner';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   
@@ -29,8 +30,9 @@ const Register = () => {
   useEffect(() => {
     if (isError) {
       toast.error(message , {
-        position: toast.POSITION.TOP_CENTER
-      })
+        position: "top-center",
+        autoClose: 3000,
+      });
       navigate('/register')
     }
 
@@ -52,7 +54,12 @@ const Register = () => {
     e.preventDefault()
 
     if (password !== password2) {
-      toast.error('Passwords do not match')
+      
+      toast.error('Passwords do not match', {
+        position: "top-center",
+        autoClose: 3000,
+      });
+
     } else {
       const userData = {
         username,
@@ -121,6 +128,9 @@ const Register = () => {
                 </button>
               </form>
               <Link to="/login">Already have an account? Login</Link>
+
+              <ToastContainer />
+
             </Col>
           </Row>
         </Container>
