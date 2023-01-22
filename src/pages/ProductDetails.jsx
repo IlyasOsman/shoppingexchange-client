@@ -20,14 +20,14 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/products/${id}`)
+    fetch(`https://enigmatic-wildwood-08782.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
         setLoading(false);
       });
 
-    fetch(`http://localhost:3000/products`)
+    fetch(`https://enigmatic-wildwood-08782.herokuapp.com/products`)
       .then((res) => res.json())
       .then((data) => {
         setRelatedProduct(data.filter((item) => item.category === product.category));

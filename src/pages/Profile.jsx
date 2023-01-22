@@ -30,7 +30,7 @@ function Profile(args) {
 
   const [loggedUsername, setLoggedUsername] = useState('');
   const [loggedEmail, setLoggedEmail] = useState('');
-  const API = 'http://localhost:3000';
+  const API = 'https://enigmatic-wildwood-08782.herokuapp.com';
 
   useEffect(() => {
     fetch(`${API}/api/v1/profile`, {

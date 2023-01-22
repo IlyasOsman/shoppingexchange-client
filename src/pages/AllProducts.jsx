@@ -15,7 +15,7 @@ const AllProducts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/products")
+    fetch("https://enigmatic-wildwood-08782.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

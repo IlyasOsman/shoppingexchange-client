@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/v1/';
+const API_URL = 'https://enigmatic-wildwood-08782.herokuapp.com/api/v1/';
 
 const register = async (userData) => {
   const response = await fetch(API_URL + 'users', {
