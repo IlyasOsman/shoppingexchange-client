@@ -1,20 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
-
 import { Container, Row, Col } from "reactstrap";
-
-import products from "../assets/fake-data/products";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
-
 import "../styles/all-products.css";
 import "../styles/pagination.css";
+import Spinner from "../components/UI/spinner/Spinner";
 
 const AllProducts = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const [pageNumber, setPageNumber] = useState(0);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://enigmatic-wildwood-08782.herokuapp.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      });
+  }, []);
 
   const searchedProduct = products.filter((item) => {
     if (searchTerm.value === "") {
@@ -40,10 +47,13 @@ const AllProducts = () => {
     setPageNumber(selected);
   };
 
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <Helmet title="All-Products">
       <CommonSection title="All Products" />
-
       <section>
         <Container>
           <Row>

@@ -23,6 +23,8 @@ const ProductCard = (props) => {
     );
   };
 
+  const user = localStorage.getItem("user");
+
   return (
     <div className="product__item">
       <div className="product__img">
@@ -31,10 +33,14 @@ const ProductCard = (props) => {
 
       <div className="product__content">
         <h5>
+          { user ?
           <Link to={`/products/${id}`}>{title}</Link>
+          :
+            <Link to={'/login'}>{title}</Link>
+          }
         </h5>
         <div >
-          <span className="product__price">From {price} in {stores.length} stores</span>
+          <span className="product__price">From Kshs {price} in {stores.length} stores</span>
         
         </div> 
         <div className="d-flex align-items-centre justify-content-end" >
