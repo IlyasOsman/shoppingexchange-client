@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
+import emailjs from '@emailjs/browser'
 
 
 function Contact() {
+  const [message, setMessage] = useState('');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,14 +21,24 @@ function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // send the form data to the server or backend here
-    console.log(formData);
+    emailjs.sendForm('service_1vamyaq', 'template_22ib47r', event.target , 'scDtehcPHzP83LLfM').then((result) => {
+      console.log(result.text);
+      setMessage('Your message has been sent successfully');
+      setTimeout(()=>setMessage(''),5000)
+      setFormData({name: '', email: '', message: ''});
+  }, (error) => {
+      console.log(error.text);
+  });
   };
 
   return (
     <Helmet title="Login">
       <CommonSection title="Contact" />
       <section>
+        <div className='d-flex justify-content-center'>
+          {message && <p className="successs-message" style={{color: "green"}} >{message}</p>}
+        </div>
+          
         <Container>
           <Row>
             <Col lg="6" md="6" sm="12" className="m-auto text-center">
