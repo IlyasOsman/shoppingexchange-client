@@ -2,6 +2,12 @@
 ## Description
 Shopping Exchange is a web application that compares prices from different ecommerce websites, making it easy for users to find the best deals on the products they're looking for.
 
+## Technologies
+
+1. Backend: Ruby on Rails
+2. Database: PostgreSQL
+3. Frontend: ReactJs & Redux Toolkit (state management)
+
 ## Live Link
 
 
