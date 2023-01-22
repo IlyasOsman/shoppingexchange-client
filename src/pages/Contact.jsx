@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser'
 
 function Contact() {
   const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('')
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,12 +24,14 @@ function Contact() {
     event.preventDefault();
     emailjs.sendForm('service_1vamyaq', 'template_22ib47r', event.target , 'scDtehcPHzP83LLfM').then((result) => {
       console.log(result.text);
-      setMessage('Your message has been sent successfully');
+      setMessage('Your message has been sent successfully!');
       setTimeout(()=>setMessage(''),5000)
       setFormData({name: '', email: '', message: ''});
   }, (error) => {
-      console.log(error.text);
-  });
+    console.log(error.text);
+    setErrorMessage("Sorry, there was an error sending your message. \n Please try again later.");
+    setTimeout(()=>setErrorMessage(''),5000)
+    });
   };
 
   return (
@@ -37,6 +40,7 @@ function Contact() {
       <section>
         <div className='d-flex justify-content-center'>
           {message && <p className="successs-message" style={{color: "green"}} >{message}</p>}
+          {errorMessage && <p className="error-message" style={{color: "red"}} >{errorMessage}</p>}
         </div>
           
         <Container>
