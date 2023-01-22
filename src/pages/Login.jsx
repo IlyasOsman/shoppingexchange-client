@@ -30,7 +30,7 @@ const Login = () => {
     if (isError) {
       toast.error("Invalid username or password", {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 5000,
       });
       navigate('/login')
     }
