@@ -65,28 +65,37 @@ https://shoppingexchange.vercel.app/home
 ### Frontend
 
  - Fork and Clone this repository
- - Run `npm install` to install all the dependencies
- <br />
-        ```npm install```
+ - Run `npm install` to install all the dependencies. <br />
+
+        npm install
+
  - Run `npm start` to start the development server <br />
-        ```npm start```
+
+        npm start
 
 ### Backend
 Link to backend repository : https://github.com/IlyasOsman/product-comparator-api
  - Clone this repository
  - Run `bundle install` to install all the dependencies <br />
-        ```bundle install```
+
+        bundle install
+
  - Run `rails db:migrate db:seed` to create and migrate the database. <br />
-        ```rails db:migrate db:seed```
+
+        rails db:migrate db:seed
+
  - Run `rails server` to start the development server. <br />
-        ```rails s```
+
+        rails s
 
 ### Backend api 
 Here is backend api hosted on heroku.
-  -  ```https://enigmatic-wildwood-08782.herokuapp.com/products```
+
+   - ```https://enigmatic-wildwood-08782.herokuapp.com/products```
+
 ### Endpoints
-     ```https://enigmatic-wildwood-08782.herokuapp.com/products```
-    ```https://enigmatic-wildwood-08782.herokuapp.com/stores```
+     https://enigmatic-wildwood-08782.herokuapp.com/products
+     https://enigmatic-wildwood-08782.herokuapp.com/stores
 ## License
 
 This project is licensed under the MIT License 
