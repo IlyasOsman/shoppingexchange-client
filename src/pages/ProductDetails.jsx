@@ -1,32 +1,40 @@
 import React, { useState, useEffect } from "react";
 import { Table } from "reactstrap"
-
-import products from "../assets/fake-data/products";
 import {  useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
-
 import { useDispatch } from "react-redux";
 import { cartActions } from "../store/shopping-cart/cartSlice";
-
 import "../styles/product-details.css";
-
 import ProductCard from "../components/UI/product-card/ProductCard";
+import Spinner from "../components/UI/spinner/Spinner";
 
-const FoodDetails = () => {
+const ProductDetails = () => {
   const [tab, setTab] = useState("desc");
-  // const [enteredName, setEnteredName] = useState("");
-  // const [enteredEmail, setEnteredEmail] = useState("");
-  // const [reviewMsg, setReviewMsg] = useState("");
   const { id } = useParams();
   const dispatch = useDispatch();
-
-  const product = products.find((product) => product.id === id);
+  const [product, setProduct] = useState({});
   const [previewImg, setPreviewImg] = useState(product.image01);
-  const { title, price, category, desc, image01 } = product;
+  const [relatedProduct, setRelatedProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const relatedProduct = products.filter((item) => category === item.category);
+  useEffect(() => {
+    fetch(`http://localhost:3000/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        setLoading(false);
+      });
+
+    fetch(`http://localhost:3000/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRelatedProduct(data.filter((item) => item.category === product.category));
+      });
+  }, [id, product.category]);
+
+  const { title, price, category, desc, image01 } = product;
 
   const addItem = () => {
     dispatch(
@@ -39,12 +47,6 @@ const FoodDetails = () => {
     );
   };
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   console.log(enteredName, enteredEmail, reviewMsg);
-  // };
-
   useEffect(() => {
     setPreviewImg(product.image01);
   }, [product]);
@@ -52,6 +54,11 @@ const FoodDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [product]);
+
+  if (loading) {
+    return <Spinner />;
+  }
+
 
   return (
     <Helmet title="Product-details">
@@ -95,7 +102,7 @@ const FoodDetails = () => {
                 <h2 className="product__title mb-3">{title}</h2>
                 <p className="product__price">
                   {" "}
-                  Price: <span>{price}</span>
+                  Price: <span>Kshs {price}</span>
                 </p>
                 <p className="category mb-5">
                   Category: <span>{category}</span>
@@ -177,7 +184,10 @@ const FoodDetails = () => {
                     {product.stores.map(store => (
                       <tr key={store.name}>
                         <td>{store.name}</td>
-                        <td>{store.review}</td>
+                        <td>{store.reviews}</td>
+                        <td>
+                          <button onClick={() => window.open(store.link,'_blank')} className="addTOCart__btn" >visit store</button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -202,4 +212,4 @@ const FoodDetails = () => {
   );
 };
 
-export default FoodDetails;
+export default ProductDetails;
