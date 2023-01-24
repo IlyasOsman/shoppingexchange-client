@@ -95,7 +95,7 @@ Here is backend api hosted on heroku.
 
 ### Endpoints
      https://enigmatic-wildwood-08782.herokuapp.com/products
-     https://enigmatic-wildwood-08782.herokuapp.com/stores
+     
 ## License
 
 This project is licensed under the MIT License 
