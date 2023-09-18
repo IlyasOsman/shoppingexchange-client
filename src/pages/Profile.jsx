@@ -103,23 +103,6 @@ function Profile(args) {
                   <button className="addTOCart__btn" onClick={onLogout} >
                          Log out
                   </button>
-
-                  <Modal isOpen={modal} toggle={toggle} {...args}>
-                    <ModalHeader toggle={toggle}>Warning!</ModalHeader>
-                    <ModalBody>
-                      Deleting your account is unfriendly to your pocket, you broke ass!
-                      <br />
-                       <i><small>This isn't functional yet.</small></i> 
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button color="danger" onClick={toggle}>
-                        Ok
-                      </Button>{' '}
-                      <Button color="secondary" onClick={toggle}>
-                        Cancel
-                      </Button>
-                    </ModalFooter>
-                  </Modal>
                   </div>
                   
                   </MDBCardBody>
